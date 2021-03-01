@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.slider {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image {
+  width: 1000px;
+  height: 600px;
+  border-radius: 10px;
+}
+.arrow {
+  position: absolute;
+  top: 50%;
+  font-size: 3rem;
+  z-index: 10;
+  cursor: pointer;
+  user-select: none;
+}
+.right-arrow {
+  right: 32px;
+  color: #000;
+}
+.left-arrow {
+  left: 32px;
+  color: #000;
+}
+.slide {
+  opacity: 0;
+  transition: 1s ease;
+}
+.slide.active {
+  opacity: 1;
+  transition: 1s;
+  transform: scale(1.08);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* form */
+.search {
+  border: 3px #ccc solid;
+  border-radius: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 30px;
+  left: 90px;
+  z-index: 100;
+  background-color: #fff;
+  max-width: 30vw;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search .heading {
+  font-size: 30px;
+  margin-top: 10px;
+  font-weight: 700;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search .sub-heading {
+  color: gray;
+  margin-bottom: 15px;
+}
+form {
   display: flex;
   flex-direction: column;
+  grid-gap: 10px;
+}
+form > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form > div > * {
+  width: 100%;
+}
+
+form select,
+form input,
+.react-date-picker__wrapper {
+  border-radius: 5px;
+  height: 30px;
+  outline: none;
+  border: 1px gray solid;
+}
+form button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 15px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  grid-gap: 5px;
   color: white;
+  background-image: linear-gradient(to right, #61045f 0%, #aa076b 51%);
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form .date {
+  border: none;
 }
